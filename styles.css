@@ -1,5 +1,13 @@
-body.hide-completed-tasks .markdown-preview-view ul > li.task-list-item.is-checked,
-body.hide-completed-tasks .markdown-source-view .HyperMD-task-line[data-task]:not([data-task=" "]) {
-    display: none;
-    }
-}"])
+/* PREVIEW mode: Only hide standard completed tasks ([x] or [X]) */                                                                                                                                                
+body.hide-completed-tasks .markdown-preview-view ul > li.task-list-item[data-task="x"].is-checked,                                                                                                                 
+body.hide-completed-tasks .markdown-preview-view ul > li.task-list-item[data-task="X"].is-checked                                                                                                                  
+{                                                                                                                                                                                                                  
+    display: none;                                                                                                                                                                                                 
+}                                                                                                                                                                                                                  
+                                                                                                                                                                                                                   
+/* SOURCE & LIVE PREVIEW mode: Only hide - [x] and - [X] (not [*], [>], [/] etc.) */                                                                                                                               
+body.hide-completed-tasks .markdown-source-view .HyperMD-task-line[data-task="x"],                                                                                                                                 
+body.hide-completed-tasks .markdown-source-view .HyperMD-task-line[data-task="X"]                                                                                                                                  
+{                                                                                                                                                                                                                  
+    display: none;                                                                                                                                                                                                 
+}  
